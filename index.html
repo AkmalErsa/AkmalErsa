@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio | [Nama Kamu]</title>
+  <title>Portfolio | [Your Name]</title>
   <style>
     :root {
       --primary: #00497a;
@@ -32,6 +32,15 @@
       color: white;
       padding: 40px 20px;
       text-align: center;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      object-fit: cover;
+      margin-top: 10px;
     }
 
     header h1 {
@@ -110,62 +119,94 @@
       background-color: #eee;
       margin-top: 40px;
     }
+
+    .cv-button {
+      margin-top: 20px;
+      display: block;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>[Nama Kamu]</h1>
-  <p>Magister Teknik Mesin | Institut Teknologi Sepuluh Nopember (ITS)</p>
+  <img src="photo.jpg" alt="Profile Photo [Your Name]" class="profile-img" />
+  <h1>[Your Name]</h1>
+  <p>Master’s Student in Mechanical Engineering | Institut Teknologi Sepuluh Nopember (ITS)</p>
   <nav>
-    <a href="mailto:kamu@email.com">Email</a> |
-    <a href="https://github.com/namakamu" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/namakamu" target="_blank">LinkedIn</a>
+    <a href="mailto:you@email.com">Email</a> |
+    <a href="https://github.com/yourgithub" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
   </nav>
 </header>
 
 <section>
-  <h2>Tentang Saya</h2>
+  <h2>About Me</h2>
   <div class="card">
-    <p>Saya mahasiswa magister Teknik Mesin di ITS, dengan minat dalam simulasi termal dan pembakaran bersih. Penelitian saya berfokus pada <strong>co-firing ammonia dengan batubara</strong> dalam boiler PLTU, termasuk analisis efisiensi pembakaran dan emisi menggunakan <strong>ANSYS Fluent</strong>.</p>
+    <p>I am a graduate student in Mechanical Engineering at ITS, specializing in thermal systems and clean combustion. My research focuses on <strong>ammonia co-firing in coal-fired boilers</strong>, evaluating performance and emissions through <strong>CFD simulations using ANSYS Fluent</strong>.</p>
   </div>
 </section>
 
 <section>
-  <h2>Proyek Unggulan</h2>
+  <h2>Featured Projects</h2>
 
   <div class="project">
-    <h3>Simulasi CFD Co-firing Ammonia</h3>
-    <p>Penelitian menggunakan ANSYS Fluent untuk menganalisis injeksi ammonia di berbagai level burner. Fokus pada FEGT, NOx, dan CO₂. Case 4 menunjukkan pembakaran paling efisien dengan emisi rendah.</p>
-    <a class="button" href="https://github.com/namakamu/project-cofiring" target="_blank">Lihat Proyek</a>
+    <h3>CFD Simulation of Ammonia Co-Firing</h3>
+    <p>Analyzed ammonia injection at different burner levels. Case 4 showed optimal combustion with the highest FEGT and lowest NOx emissions. Tools used: ANSYS Fluent, Excel, Python.</p>
+    <a class="button" href="https://github.com/yourgithub/project-cofiring" target="_blank">View Project</a>
   </div>
 
   <div class="project">
-    <h3>Model Optimasi Efisiensi Boiler</h3>
-    <p>Mengembangkan model kalkulasi efisiensi termal menggunakan Python, berbasis data operasi PLTU. Termasuk visualisasi performa dan saran optimasi energi.</p>
-    <a class="button" href="https://github.com/namakamu/thermal-efficiency" target="_blank">Lihat Proyek</a>
+    <h3>Thermal Efficiency Modeling</h3>
+    <p>Developed a Python-based model for predicting thermal efficiency of coal boilers using operational data. Included visualization and improvement recommendations.</p>
+    <a class="button" href="https://github.com/yourgithub/thermal-efficiency" target="_blank">View Project</a>
   </div>
 
 </section>
 
 <section>
-  <h2>Keahlian</h2>
+  <h2>Certifications</h2>
+  <div class="card">
+    <ul>
+      <li>CFD Simulation with ANSYS (Coursera)</li>
+      <li>Energy Transition Technologies (FutureLearn)</li>
+      <li>Python for Engineering Applications</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Publications</h2>
+  <div class="card">
+    <ul>
+      <li>“CFD Analysis of Ammonia Co-Firing in Pulverized Coal Boiler”, IEEE Conference 2025 (submitted)</li>
+      <li>“Thermal Efficiency Analysis on PLTU using Real Operation Data”, National Energy Seminar ITS</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cv-button">
+  <a class="button" href="your-cv.pdf" target="_blank">📄 Download My CV</a>
+</section>
+
+<section>
+  <h2>Skills</h2>
   <div class="card">
     <ul class="skills">
       <li>CFD (ANSYS Fluent)</li>
-      <li>Termodinamika</li>
-      <li>Perpindahan Panas</li>
+      <li>Thermodynamics</li>
+      <li>Heat Transfer</li>
       <li>Python</li>
       <li>MATLAB</li>
       <li>Excel VBA</li>
-      <li>Teknik Pembakaran</li>
-      <li>Penulisan Ilmiah</li>
+      <li>Combustion Engineering</li>
+      <li>Scientific Writing</li>
     </ul>
   </div>
 </section>
 
 <footer>
-  &copy; 2025 [Nama Kamu]. Dibuat dengan semangat inovasi dan energi bersih.
+  &copy; 2025 [Your Name]. Created with passion for clean energy and engineering innovation.
 </footer>
 
 </body>
