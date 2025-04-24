@@ -1,213 +1,110 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio | [Nama Kamu]</title>
-  <style>
-    :root {
-      --primary: #00497a;
-      --accent: #f9a825;
-      --bg: #f9f9f9;
-      --text: #333;
-      --card-bg: white;
-    }
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail } from "lucide-react";
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800 px-6 py-10">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <img
+            src="/3.jpeg"
+            alt="Profile"
+            className="mx-auto rounded-full w-32 h-32 object-cover border-4 border-yellow-400"
+          />
+          <h1 className="text-4xl font-bold mt-4">Abdullah Akmal Ersa Putra</h1>
+          <p className="text-lg text-gray-600 mt-2">
+            Master's Student in Mechanical Engineering @ ITS
+          </p>
+          <div className="flex justify-center gap-4 mt-4">
+            <a href="mailto:you@email.com" target="_blank" rel="noopener noreferrer">
+              <Mail className="w-6 h-6 hover:text-blue-600" />
+            </a>
+            <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+              <Github className="w-6 h-6 hover:text-blue-600" />
+            </a>
+            <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="w-6 h-6 hover:text-blue-600" />
+            </a>
+          </div>
+        </motion.div>
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 0 20px;
-    }
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+          <Card>
+            <CardContent className="p-4">
+              I am passionate about energy systems and clean combustion. My current research focuses on ammonia co-firing in coal boilers using CFD simulations to assess thermal performance and emissions.
+            </CardContent>
+          </Card>
+        </section>
 
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold">CFD Simulation of Ammonia Co-Firing</h3>
+                <p className="text-sm mt-2">
+                  Optimization of burner injection level in coal boiler. Tools: ANSYS Fluent, Excel.
+                </p>
+                <a
+                  href="https://github.com/yourgithub/project-cofiring"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="mt-4">View Project</Button>
+                </a>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="p-4">
+                <h3 className="text-lg font-bold">Thermal Efficiency Modeling</h3>
+                <p className="text-sm mt-2">
+                  Developed a Python-based model using operational PLTU data to predict efficiency.
+                </p>
+                <a
+                  href="https://github.com/yourgithub/thermal-efficiency"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="mt-4">View Project</Button>
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      object-fit: cover;
-      margin-top: 10px;
-    }
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+          <div className="flex flex-wrap gap-2">
+            {["CFD (ANSYS Fluent)", "Python", "Heat Transfer", "Thermodynamics", "MATLAB", "Combustion Engineering"].map(skill => (
+              <span
+                key={skill}
+                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </section>
 
-    header h1 {
-      font-size: 2.5em;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    nav {
-      margin-top: 15px;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      margin-bottom: 10px;
-      border-bottom: 2px solid var(--accent);
-      display: inline-block;
-    }
-
-    .project, .card {
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    .project h3 {
-      color: var(--primary);
-    }
-
-    a.button {
-      display: inline-block;
-      padding: 8px 15px;
-      background-color: var(--accent);
-      color: #000;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    ul.skills {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    ul.skills li {
-      background-color: var(--primary);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.9em;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #eee;
-      margin-top: 40px;
-    }
-
-    .cv-button {
-      margin-top: 20px;
-      display: block;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <img src="foto.jpg" alt="Foto Profil [Nama Kamu]" class="profile-img" />
-  <h1>[Nama Kamu]</h1>
-  <p>Magister Teknik Mesin | Institut Teknologi Sepuluh Nopember (ITS)</p>
-  <nav>
-    <a href="mailto:kamu@email.com">Email</a> |
-    <a href="https://github.com/namakamu" target="_blank">GitHub</a> |
-    <a href="https://linkedin.com/in/namakamu" target="_blank">LinkedIn</a>
-  </nav>
-</header>
-
-<section>
-  <h2>Tentang Saya</h2>
-  <div class="card">
-    <p>Saya mahasiswa magister Teknik Mesin di ITS, dengan minat dalam simulasi termal dan pembakaran bersih. Fokus pada co-firing ammonia dalam boiler PLTU, serta penggunaan ANSYS Fluent untuk analisis energi dan emisi.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Proyek Unggulan</h2>
-
-  <div class="project">
-    <h3>Simulasi CFD Co-firing Ammonia</h3>
-    <p>Menganalisis performa burner saat ammonia diinjeksikan, dengan output FEGT, NOx, CO₂. Case 4 terbukti paling efisien. Tools: ANSYS Fluent, Excel, Python.</p>
-    <a class="button" href="https://github.com/namakamu/project-cofiring" target="_blank">Lihat Proyek</a>
-  </div>
-
-  <div class="project">
-    <h3>Model Perhitungan Efisiensi Termal</h3>
-    <p>Model prediksi efisiensi boiler berdasarkan data aktual operasi. Digunakan Python dan regresi linier untuk visualisasi dan analisis performa.</p>
-    <a class="button" href="https://github.com/namakamu/thermal-efficiency" target="_blank">Lihat Proyek</a>
-  </div>
-
-</section>
-
-<section>
-  <h2>Sertifikasi</h2>
-  <div class="card">
-    <ul>
-      <li>CFD Simulation with ANSYS (Coursera)</li>
-      <li>Energy Transition Technologies (FutureLearn)</li>
-      <li>Basic Python for Engineering Analysis</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>Publikasi Ilmiah</h2>
-  <div class="card">
-    <ul>
-      <li>“CFD Analysis of Ammonia Co-Firing in Pulverized Coal Boiler”, IEEE Conference 2025 (submitted)</li>
-      <li>“Thermal Efficiency Analysis on PLTU using Real Operation Data”, Seminar Nasional Energi ITS</li>
-    </ul>
-  </div>
-</section>
-
-<section class="cv-button">
-  <a class="button" href="cv-kamu.pdf" target="_blank">📄 Unduh CV Saya</a>
-</section>
-
-<section>
-  <h2>Keahlian</h2>
-  <div class="card">
-    <ul class="skills">
-      <li>CFD (ANSYS Fluent)</li>
-      <li>Termodinamika</li>
-      <li>Perpindahan Panas</li>
-      <li>Python</li>
-      <li>MATLAB</li>
-      <li>Excel VBA</li>
-      <li>Teknik Pembakaran</li>
-      <li>Penulisan Ilmiah</li>
-    </ul>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 [Nama Kamu]. Dibuat dengan semangat inovasi dan energi bersih.
-</footer>
-
-</body>
-</html>
+        <section className="text-center mt-10">
+          <a
+            href="/your-cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition"
+          >
+            📄 Download My CV
+          </a>
+        </section>
+      </div>
+    </div>
+  );
+}
