@@ -2,51 +2,113 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portofolio - [Nama Kamu]</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio | [Nama Kamu]</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0 20px;
-      background: #f4f4f4;
-      color: #333;
+    :root {
+      --primary: #00497a;
+      --accent: #f9a825;
+      --bg: #f9f9f9;
+      --text: #333;
+      --card-bg: white;
     }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
     header {
-      background: #004466;
+      background-color: var(--primary);
       color: white;
-      padding: 30px 0;
+      padding: 40px 20px;
       text-align: center;
     }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
     section {
-      margin: 40px 0;
+      max-width: 900px;
+      margin: 40px auto;
     }
+
     h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
     }
-    ul {
-      line-height: 1.6;
-    }
-    .project {
-      background: white;
+
+    .project, .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 8px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
+
+    .project h3 {
+      color: var(--primary);
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 8px 15px;
+      background-color: var(--accent);
+      color: #000;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    ul.skills {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    ul.skills li {
+      background-color: var(--primary);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #eee;
-      font-size: 0.9em;
-    }
-    a {
-      color: #004466;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      background-color: #eee;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -54,45 +116,56 @@
 
 <header>
   <h1>[Nama Kamu]</h1>
-  <p>Magister Teknik Mesin | ITS</p>
-  <p><a href="mailto:kamu@email.com">kamu@email.com</a> | <a href="https://github.com/namakamu" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/namakamu" target="_blank">LinkedIn</a></p>
+  <p>Magister Teknik Mesin | Institut Teknologi Sepuluh Nopember (ITS)</p>
+  <nav>
+    <a href="mailto:kamu@email.com">Email</a> |
+    <a href="https://github.com/namakamu" target="_blank">GitHub</a> |
+    <a href="https://linkedin.com/in/namakamu" target="_blank">LinkedIn</a>
+  </nav>
 </header>
 
 <section>
   <h2>Tentang Saya</h2>
-  <p>Saya adalah mahasiswa magister Teknik Mesin di ITS dengan fokus penelitian pada simulasi termal dan co-firing ammonia menggunakan CFD (ANSYS Fluent). Memiliki ketertarikan pada energi terbarukan dan efisiensi pembakaran di sektor pembangkitan listrik.</p>
+  <div class="card">
+    <p>Saya mahasiswa magister Teknik Mesin di ITS, dengan minat dalam simulasi termal dan pembakaran bersih. Penelitian saya berfokus pada <strong>co-firing ammonia dengan batubara</strong> dalam boiler PLTU, termasuk analisis efisiensi pembakaran dan emisi menggunakan <strong>ANSYS Fluent</strong>.</p>
+  </div>
 </section>
 
 <section>
   <h2>Proyek Unggulan</h2>
 
   <div class="project">
-    <h3>Simulasi Co-firing Ammonia 20% pada Boiler PLTU</h3>
-    <p>Menggunakan ANSYS Fluent untuk mensimulasikan injeksi ammonia pada berbagai level burner. Fokus pada FEGT, emisi CO₂ dan NOx. Hasil menunjukkan efisiensi optimal saat ammonia disuntikkan di burner E.</p>
-    <p><a href="https://github.com/namakamu/project-cofiring">Lihat di GitHub</a></p>
+    <h3>Simulasi CFD Co-firing Ammonia</h3>
+    <p>Penelitian menggunakan ANSYS Fluent untuk menganalisis injeksi ammonia di berbagai level burner. Fokus pada FEGT, NOx, dan CO₂. Case 4 menunjukkan pembakaran paling efisien dengan emisi rendah.</p>
+    <a class="button" href="https://github.com/namakamu/project-cofiring" target="_blank">Lihat Proyek</a>
   </div>
 
   <div class="project">
-    <h3>Optimasi Efisiensi Thermal Menggunakan Python</h3>
-    <p>Model perhitungan efisiensi boiler berdasarkan input bahan bakar dan output energi. Menggunakan data operasi dan regresi linier untuk analisis performa.</p>
-    <p><a href="https://github.com/namakamu/thermal-efficiency">Lihat di GitHub</a></p>
+    <h3>Model Optimasi Efisiensi Boiler</h3>
+    <p>Mengembangkan model kalkulasi efisiensi termal menggunakan Python, berbasis data operasi PLTU. Termasuk visualisasi performa dan saran optimasi energi.</p>
+    <a class="button" href="https://github.com/namakamu/thermal-efficiency" target="_blank">Lihat Proyek</a>
   </div>
 
 </section>
 
 <section>
   <h2>Keahlian</h2>
-  <ul>
-    <li>CFD (ANSYS Fluent)</li>
-    <li>Termodinamika dan Perpindahan Panas</li>
-    <li>Pemodelan sistem energi</li>
-    <li>Python, MATLAB, Excel VBA</li>
-    <li>Komunikasi teknis dan penulisan ilmiah</li>
-  </ul>
+  <div class="card">
+    <ul class="skills">
+      <li>CFD (ANSYS Fluent)</li>
+      <li>Termodinamika</li>
+      <li>Perpindahan Panas</li>
+      <li>Python</li>
+      <li>MATLAB</li>
+      <li>Excel VBA</li>
+      <li>Teknik Pembakaran</li>
+      <li>Penulisan Ilmiah</li>
+    </ul>
+  </div>
 </section>
 
 <footer>
-  &copy; 2025 [Nama Kamu]. Dibuat dengan 💻 & semangat energi bersih.
+  &copy; 2025 [Nama Kamu]. Dibuat dengan semangat inovasi dan energi bersih.
 </footer>
 
 </body>
